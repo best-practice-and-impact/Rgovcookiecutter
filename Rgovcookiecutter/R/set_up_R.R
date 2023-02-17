@@ -28,7 +28,7 @@ create_package <- function(directory, package_name){
   dir.create("testthat")
   setwd(directory)
   usethis::use_readme_md()
-
+  usethis::use_git()
 
 }
 
