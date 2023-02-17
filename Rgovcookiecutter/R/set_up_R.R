@@ -1,17 +1,17 @@
 #Before this set up folder structure where we have top level and package folder already existing
 ## name folder you are going into correctly
 
-In the console
+#In the console
 
 
 
-setwd("YOUR_DIRECTORY")
-install.packages("usethis")
-usethis::create_package(getwd())
+#setwd("YOUR_DIRECTORY")
+#install.packages("usethis")
+#usethis::create_package(getwd())
 
-In the terminal
-git init
-pre-commit install
+#In the terminal
+#git init
+#pre-commit install
 
 #git add .
 #git commit -m " "
@@ -24,6 +24,10 @@ create_package <- function(directory, package_name){
   install.packages("usethis")
   usethis::create_package(getwd())
   dir.create("tests")
+  setwd("tests")
+  dir.create("testthat")
+  setwd(directory)
+  usethis::use_readme_md()
 
 
 }
