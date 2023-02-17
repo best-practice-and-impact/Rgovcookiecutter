@@ -11,7 +11,8 @@ Encoding: UTF-8
 Depends: 
 	R (>= 4.0.0),
 Imports:
-    usethis
+    usethis, 
+    R.utils
 Suggests: 
     testthat (>= 2.1.0)
 LazyData: true

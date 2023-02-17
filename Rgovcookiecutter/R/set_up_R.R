@@ -1,21 +1,3 @@
-#Before this set up folder structure where we have top level and package folder already existing
-## name folder you are going into correctly
-
-#In the console
-
-
-
-#setwd("YOUR_DIRECTORY")
-#install.packages("usethis")
-#usethis::create_package(getwd())
-
-#In the terminal
-#git init
-#pre-commit install
-
-#git add .
-#git commit -m " "
-
 create_package <- function(directory, package_name){
 
   setwd(directory)
@@ -30,6 +12,20 @@ create_package <- function(directory, package_name){
   usethis::use_readme_md()
   usethis::use_git()
 
+
+}
+
+
+
+copy_docs_folder <- function(directory){
+
+  file.copy(paste0(getwd(),"/docs"), directory,recursive=TRUE)
+  file.copy(paste0(getwd(),"/.pre-commit-config.yaml"), directory)
+}
+
+Install_precommit_hooks function(){
+
+  system("pre-commit install")
 }
 
 
