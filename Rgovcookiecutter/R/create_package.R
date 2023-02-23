@@ -29,6 +29,7 @@ create_package <- function(project_location, package_name, github_repo = 'https:
   usethis::use_zip(github_repo, destdir = project_location)
 
   file.rename("Rgovcookiecutter-main" ,package_name)
+  setwd(package_name)
   usethis::use_git()
 
   #delete set_up.R file
