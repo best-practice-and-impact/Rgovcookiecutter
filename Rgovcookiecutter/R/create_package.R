@@ -43,7 +43,7 @@ create_package <- function(project_location, project_name, package_name = NULL, 
   setwd(project_location)
   usethis::use_zip(github_repo, destdir = project_location, cleanup = TRUE)
   file.rename("Rgovcookiecutter-main" ,project_name)
-  setwd(package_name)
+  setwd(project_name)
   file.rename("Rgovcookiecutter" ,package_name)
 
   usethis::create_project(getwd())
