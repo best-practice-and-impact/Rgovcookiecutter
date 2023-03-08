@@ -6,6 +6,19 @@
 #}
 
 
+#' @title Cleans strings 
+#' 
+#' @description Removes hyphens, underscores and spaces and makes string lower case 
+#' 
+#' @param string the string to be made clean 
+#' 
+#' @return clean string 
+
+clean_string <- function(string) {
+  
+  return(gsub('[^[:alnum:].]','', tolower(string)))
+  
+}
 
 #' @title Create project structure
 #'
@@ -18,25 +31,22 @@
 #' @return NULL
 #' @export
 
-create_package <- function(project_location, package_name, project_name,  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
+create_package <- function(project_location, project_name, package_name = NULL,  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
 
   #add a bit where if you don't add another project name it just uses package name?
   #ADD limits on package_name to fit with packagename requirments (no spaces etc)
 
-  if missing(project_name) {
-    project_name = package_name
+  if package_name = NULL {
+    package_name = clean_string(project_name)
   }
-
+  
   setwd(project_location)
-  #Change name of package as well as project
   usethis::use_zip(github_repo, destdir = project_location, cleanup = TRUE)
-
-  file.rename("Rgovcookiecutter-main" ,package_name)
+  file.rename("Rgovcookiecutter-main" ,project_name)
   setwd(package_name)
   file.rename("Rgovcookiecutter" ,package_name)
 
   usethis::create_project(getwd())
-
   usethis::use_git()
 
   #delete set_up.R file
@@ -45,4 +55,9 @@ create_package <- function(project_location, package_name, project_name,  github
 
 }
 
+
+
+gsub('[^[:punct:][:space:].]','',"string.---")
+
+gsub('[^[:alnum:].]','',"stri1ng.-@@@~##:--")
 
