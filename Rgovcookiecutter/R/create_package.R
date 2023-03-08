@@ -18,7 +18,7 @@
 #' @return NULL
 #' @export
 
-create_package <- function(project_location, package_name, project_name  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
+create_package <- function(project_location, package_name, project_name,  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
 
   #add a bit where if you don't add another project name it just uses package name?
   #ADD limits on package_name to fit with packagename requirments (no spaces etc)
