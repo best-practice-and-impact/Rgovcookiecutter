@@ -31,23 +31,23 @@ clean_string <- function(string) {
 #' @return NULL
 #' @export
 
-create_package <- function(project_location, project_name, package_name = NULL,  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
+create_package <- function(project_location, project_name, package_name = NA,  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
 
   #add a bit where if you don't add another project name it just uses package name?
   #ADD limits on package_name to fit with packagename requirments (no spaces etc)
 
-  if (package_name == NULL) {
+  if(is.na(package_name)) {
     package_name = clean_string(project_name)
   }
   
   setwd(project_location)
   usethis::use_zip(github_repo, destdir = project_location, cleanup = TRUE)
-  file.rename("Rgovcookiecutter-main" ,project_name)
+  file.rename("Rgovcookiecutter-main", project_name)
   setwd(project_name)
-  file.rename("Rgovcookiecutter" ,package_name)
+  file.rename("Rgovcookiecutter", package_name)
 
   usethis::create_project(getwd())
-  usethis::use_git()
+  #usethis::use_git()
 
   #delete set_up.R file
   #run git init set up
