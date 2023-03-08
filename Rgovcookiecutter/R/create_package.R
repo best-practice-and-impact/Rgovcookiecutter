@@ -36,7 +36,7 @@ create_package <- function(project_location, project_name, package_name = NULL, 
   #add a bit where if you don't add another project name it just uses package name?
   #ADD limits on package_name to fit with packagename requirments (no spaces etc)
 
-  if package_name = NULL {
+  if (package_name == NULL) {
     package_name = clean_string(project_name)
   }
   
@@ -55,9 +55,4 @@ create_package <- function(project_location, project_name, package_name = NULL, 
 
 }
 
-
-
-gsub('[^[:punct:][:space:].]','',"string.---")
-
-gsub('[^[:alnum:].]','',"stri1ng.-@@@~##:--")
 
