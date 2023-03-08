@@ -46,7 +46,7 @@ create_package <- function(project_location, project_name, package_name = NA,  g
   setwd(project_name)
   file.rename("Rgovcookiecutter", package_name)
 
-  usethis::create_project(getwd())
+  #usethis::create_project(getwd())
   #usethis::use_git()
 
   #delete set_up.R file
