@@ -45,11 +45,11 @@ create_package <- function(project_location, project_name, package_name = NA,  g
   file.rename("Rgovcookiecutter-main", project_name)
   setwd(project_name)
   file.rename("Rgovcookiecutter", package_name)
+  file.remove(paste(getwd(), "/", package_name, "/R/create_package.R" )
 
   usethis::create_project(getwd())
   #usethis::use_git()
 
-  #delete set_up.R file
   #run git init set up
   #run install precommit
 
