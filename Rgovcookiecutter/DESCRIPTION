@@ -12,7 +12,8 @@ Depends:
 	R (>= 4.0.0),
 Imports:
     usethis, 
-    R.utils
+    R.utils, 
+    gert
 Suggests: 
     testthat (>= 2.1.0)
 LazyData: true

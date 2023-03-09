@@ -48,7 +48,7 @@ create_package <- function(project_location, project_name, package_name = NA,  g
   file.remove(paste0(getwd(), "/", package_name, "/R/create_package.R" ))
 
   usethis::create_project(getwd())
-  #usethis::use_git()
+  gert::git_init()
 
   #run git init set up
   #run install precommit
