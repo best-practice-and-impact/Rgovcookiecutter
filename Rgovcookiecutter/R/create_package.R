@@ -2,7 +2,7 @@
 
 #Install_precommit_hooks <- function(){
 #
-#  system("pre-commit install")
+#  system2("pre-commit install")
 #}
 
 
@@ -33,8 +33,6 @@ clean_string <- function(string) {
 
 create_package <- function(project_location, project_name, package_name = NA,  github_repo = 'https://github.com/best-practice-and-impact/Rgovcookiecutter/archive/refs/heads/main.zip'){
 
-  #add a bit where if you don't add another project name it just uses package name?
-  #ADD limits on package_name to fit with packagename requirments (no spaces etc)
 
   if(is.na(package_name)) {
     package_name = clean_string(project_name)
