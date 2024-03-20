@@ -13,7 +13,7 @@ create_package <- function(directory, package_name){
 
     usethis::use_readme_md()
 
-    usethis::use_mit_license(copyright_holder = "Office for National Statistics")
+    usethis::use_mit_license(copyright_holder = "Crown copyright")
 
     usethis::use_package_doc()
 
