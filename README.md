@@ -22,6 +22,6 @@ This is a basic example which shows you how to use the package:
 ``` r
 library(Rgovcookiecutter)
 
-create_package("D:\repos", "repo_name")
+create_package("D:\repos", "repo-name")
 
 ```
