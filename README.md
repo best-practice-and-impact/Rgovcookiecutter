@@ -4,9 +4,7 @@
 
 <!-- badges: end -->
 
-Rgovcookiecutter 
-
-An R package to easily set up a standardised project structure for data science projects in R, following best practice. 
+Creates a standardised project structure for data science projects in R, following best practice. 
 
 Rgovcookiecutter creates a new R project repository with everything you need to build an R package. The repository helps users to follow [quality assurance best practice](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) and includes a tests directory, continuous integration through github actions, and .gitignore pre-configured to reduce the risk of sensitive data being committed.
 
